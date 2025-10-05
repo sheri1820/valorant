@@ -229,16 +229,16 @@ st.markdown("""
 # ---- AGENT CAROUSEL (unchanged) ----
 base = "https://raw.githubusercontent.com/sheri1820/valorant-scroll-site/main"
 agents = [
-    ("ag0.avif", "Agent 0 — Stealth Specialist"),
-    ("ag1.avif", "Agent 1 — Tactical Genius"),
-    ("ag2.avif", "Agent 2 — Duelist Supreme"),
-    ("ag3.avif", "Agent 3 — Controller of Chaos"),
-    ("ag4.avif", "Agent 4 — Recon Master"),
-    ("ag5.avif", "Agent 5 — Swift Duelist"),
-    ("ag6.avif", "Agent 6 — Defensive Wall"),
-    ("ag7.avif", "Agent 7 — Precision Sniper"),
-    ("ag8.avif", "Agent 8 — Smoke & Shadows"),
-    ("ag9.avif", "Agent 9 — Firestorm"),
+    ("ag0.avif", "Vanishes into thin air to strike unseen."),
+    ("ag1.avif", "Predicts enemy moves before they happen."),
+    ("ag2.avif", "Thrives in one-on-one combat with deadly precision."),
+    ("ag3.avif", "Twists the battlefield with unpredictable power surges."),
+    ("ag4.avif", "Sees through walls and uncovers hidden threats."),
+    ("ag5.avif", "Strikes faster than the eye can follow."),
+    ("ag6.avif", "Creates impenetrable barriers of pure force."),
+    ("ag7.avif", "Eliminates targets with pixel-perfect aim."),
+    ("ag8.avif", "Cloaks the field in dark mist for silent kills."),
+    ("ag9.avif", "Unleashes blazing infernos that consume the map."),
 ]
 
 cards_html = ""
@@ -281,6 +281,17 @@ html,body { margin:0; padding:0; background: var(--bg); font-family: 'Poppins', 
 .card-front, .card-back { position:absolute; width:100%; height:100%; border-radius:12px; backface-visibility:hidden; overflow:hidden; }
 .card-front img { width:100%; height:100%; object-fit:cover; border-radius:12px; display:block; }
 .card-back { background:rgba(0,0,0,0.6); color:#fff; display:flex; align-items:center; justify-content:center; padding:10px; transform:rotateY(180deg); }
+.card-back p {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+  animation: glowText 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
+  to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc; }
+}
+
 .card:hover .card-inner { transform:rotateY(180deg); }
 .carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:var(--btn-bg); color:white; font-size:1.8rem; border:none; cursor:pointer; padding:8px 12px; border-radius:50%; z-index:5; user-select:none; }
 .carousel-btn:hover { background:var(--btn-hover); }
